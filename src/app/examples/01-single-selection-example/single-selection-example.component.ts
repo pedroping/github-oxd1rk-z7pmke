@@ -79,11 +79,11 @@ export class SingleSelectionExampleComponent implements OnInit, AfterViewInit, O
   }
 
   protected filterBanks() {
-    if (!this.banks || !this.form.get('bankFilterCtrl')!.value) {
+    if (!this.banks || !this.form.get('bankFilterCtrl')?.value) {
       return;
     }
     // get the search keyword
-    let search =  this.form.get('bankFilterCtrl')!.value;
+    let search =  this.form.get('bankFilterCtrl')?.value;
     
     if (!search) {
       this.filteredBanks.next(this.banks.slice());
